@@ -1,16 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './features/login/login.component';
+import { ClarityModule } from '@clr/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccesshubComponent } from './features/accesshub/accesshub.component';
+import { NavbarheaderComponent } from './features/navbarheader/navbarheader.component';
+import { GeneratorConfigComponent } from './features/generator-config/generator-config.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    AccesshubComponent,
+    NavbarheaderComponent,
+    GeneratorConfigComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ClarityModule,
+    BrowserAnimationsModule,
+    FormsModule, 
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

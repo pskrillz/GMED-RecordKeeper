@@ -1,0 +1,25 @@
+// .imagebuttons{
+//     height: 200px;
+//     width: 200px;
+//     // margin-left: 100px
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+.imagebutton1{
+    height: 200px;
+    width: 200px;
+    // margin-left: 100px
+    // justify-self: center;
+    // align-self: center;
+}
+
+
+.portalbuttons{
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
