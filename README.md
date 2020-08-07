@@ -1,4 +1,5 @@
 # GMEDPortal
 
-Prototype UI for portal to business info dashboard with spreadsheet template
-generator and document library. 
+Prototype UI for login portal and user dashboard created with Angular & Clarity. 
+
+Click Next on login form to go to dashboard.
