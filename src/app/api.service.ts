@@ -14,6 +14,14 @@ export class ApiService {
   constructor( private _http: HttpClient) { }
 
 
+  viewUploads(){
+    return this._http.get(`${this.baseUrl}/uploads`)
+  }
+
+
+
+
+
 
 
 }
