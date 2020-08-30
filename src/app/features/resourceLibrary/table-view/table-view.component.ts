@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TableDataService } from '../../../table-data.service'
+import { resetFakeAsyncZone } from '@angular/core/testing';
 
 @Component({
   selector: 'app-table-view',
@@ -21,8 +22,8 @@ export class TableViewComponent implements OnInit {
   }
 
 formData= {
-  Name: null,
-  Owner: null,
+  reqBy: null,
+  description: null,
 }
 
 
@@ -38,6 +39,14 @@ tableData: any = [];
 // }
 // ]
 
+refreshDataBase(){
+  this._tableData.getTableData().subscribe(
+    (res) => {
+      console.log("refreshDataBase worked", res)
+      this.tableData = res
+    }
+  )
+}
 
 addEntry(formData){
 this._tableData.addEntry(formData).subscribe(
@@ -45,6 +54,7 @@ this._tableData.addEntry(formData).subscribe(
   console.log("dataworked", "formData: " + formData, res)
   }
 )
+this.refreshDataBase()
 }
 
 

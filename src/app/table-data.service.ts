@@ -15,12 +15,12 @@ export class TableDataService {
 
   addEntry(data){
     console.log("this worked!")
-    return this._http.post(`${this.baseUrl}documents`, data)
+    return this._http.post(`${this.baseUrl}documentEntries`, data)
   }
 
   getTableData(){
     console.log("viewResults() fired")
-    return this._http.get(`${this.baseUrl}documents`)
+    return this._http.get(`${this.baseUrl}documentEntries`)
   }
 
 
