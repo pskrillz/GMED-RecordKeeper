@@ -10,7 +10,7 @@ import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccesshubComponent } from './features/accesshub/accesshub.component';
 import { NavbarheaderComponent } from './features/navbarheader/navbarheader.component';
-import { GeneratorConfigComponent } from './features/generator-config/generator-config.component';
+import { TableViewComponent } from './features/resourceLibrary/table-view/table-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { GeneratorConfigComponent } from './features/generator-config/generator-
     LoginComponent,
     AccesshubComponent,
     NavbarheaderComponent,
-    GeneratorConfigComponent
+    TableViewComponent,
+    
   ],
   imports: [
     BrowserModule,

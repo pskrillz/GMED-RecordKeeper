@@ -1,0 +1,60 @@
+<app-navbarheader></app-navbarheader>
+
+<clr-datagrid>
+    <clr-dg-column>Version</clr-dg-column>
+    <clr-dg-column>Requested By</clr-dg-column>
+    <clr-dg-column>Requested Date</clr-dg-column>
+    <clr-dg-column>Department</clr-dg-column>
+    <clr-dg-column>Name</clr-dg-column>
+    <clr-dg-column>Reference #</clr-dg-column>
+    <clr-dg-column>Subject</clr-dg-column>
+    <clr-dg-column>User</clr-dg-column>
+    <clr-dg-column>Link</clr-dg-column>
+    <clr-dg-column>Period</clr-dg-column>
+    <clr-dg-column>Description</clr-dg-column>
+    <clr-dg-column>Last Update</clr-dg-column>
+    <clr-dg-column>Expiration Date</clr-dg-column>
+
+    <clr-dg-row *ngFor="let entry of tableData">
+        <clr-dg-cell>{{entry.version}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.reqBy}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.reqDate}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.dep}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.name}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.refNum}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.subject}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.user}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.link}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.period}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.description}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.lastUpdate}}</clr-dg-cell>
+        <clr-dg-cell>{{entry.expDate}}</clr-dg-cell>
+        
+    </clr-dg-row>
+
+    <clr-dg-footer>{{tableData.length}} users</clr-dg-footer>
+</clr-datagrid>
+-
+
+
+
+<div class="container">
+    <hr>
+    <h1>Create New Record</h1>
+    <hr>
+
+
+        <div>
+            <label>Name</label>
+            <input name="name" [(ngModel)]="formData.reqBy">
+        </div>
+
+        <div>
+            <label>Color</label>
+            <input name="color" [(ngModel)]="formData.description">
+        </div>
+
+        <!--Other fields-->
+        <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
+
+</div>

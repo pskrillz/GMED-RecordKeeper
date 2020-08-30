@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeneratorConfigComponent } from './generator-config.component';
+import { TableViewComponent } from './table-view.component';
 
-describe('GeneratorConfigComponent', () => {
-  let component: GeneratorConfigComponent;
-  let fixture: ComponentFixture<GeneratorConfigComponent>;
+describe('TableViewComponent', () => {
+  let component: TableViewComponent;
+  let fixture: ComponentFixture<TableViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GeneratorConfigComponent ]
+      declarations: [ TableViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GeneratorConfigComponent);
+    fixture = TestBed.createComponent(TableViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
