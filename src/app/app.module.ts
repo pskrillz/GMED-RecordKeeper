@@ -12,6 +12,8 @@ import { AccesshubComponent } from './features/accesshub/accesshub.component';
 import { NavbarheaderComponent } from './features/navbarheader/navbarheader.component';
 import { TableViewComponent } from './features/resourceLibrary/table-view/table-view.component';
 
+import { AgGridModule } from 'ag-grid-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { TableViewComponent } from './features/resourceLibrary/table-view/table-
     BrowserAnimationsModule,
     FormsModule, 
     HttpClientModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]
