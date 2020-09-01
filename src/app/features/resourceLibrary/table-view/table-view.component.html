@@ -40,11 +40,9 @@
 
 <div class="container">
     <hr>
-    <h1>Create New Record</h1>
-    <hr>
-
-
-        <div>
+    <h1>Create New Record</h1><hr>
+    <div class="inputfields">
+        <div >
             <label>Name</label>
             <input name="name" [(ngModel)]="formData.reqBy">
         </div>
@@ -53,16 +51,25 @@
             <label>Color</label>
             <input name="color" [(ngModel)]="formData.description">
         </div>
+    
 
-        <!--Other fields-->
-        <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
+            <!--Other fields-->
+            <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
+        </div>
+    </div>
 
-</div>
 
-<ag-grid-angular
-    style="width: 500px; height: 500px;"
-    class="ag-theme-alpine"
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
+<ag-grid-angular 
+    style= "width: 90vw; height: 500px;"
+    class= "ag-theme-alpine"
+    [rowData]= "rowData | async"
+    [columnDefs]= "columnDefs"
+    pagination
+    
     >
 </ag-grid-angular>
+
+
+<!-- Figure out how to use pagination
+figure out how to use event emitters...
+(cellClicked)="onCellClicked($event)"-->
