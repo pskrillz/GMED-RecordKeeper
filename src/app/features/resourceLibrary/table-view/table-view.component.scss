@@ -6,6 +6,21 @@
     
 }
 
+// ag grid
+.ag-theme-alpine{
+    width: 100%; 
+    height: 100%;
+}
+
+.gridcontainer{
+    width: 100vw; height: 60vh;
+    padding: 15px;
+    margin: 25px;
+    margin-top: 50px;
+    maright-right: 20px;
+}
+
+
 .inputfields{
     display:flex;
     flex-direction: row;

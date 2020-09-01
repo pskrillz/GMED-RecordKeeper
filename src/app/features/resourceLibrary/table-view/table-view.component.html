@@ -1,6 +1,56 @@
 <app-navbarheader></app-navbarheader>
 
-<clr-datagrid>
+
+<div class="gridcontainer" id="agGrid">
+    <ag-grid-angular #agGrid
+        class= "ag-theme-alpine"
+        [rowData]= "rowData | async"
+        [columnDefs]= "columnDefs"
+        (cellValueChanged)="cellValueChanged($event)"
+        pagination
+        
+        >
+    </ag-grid-angular>
+</div>
+
+
+
+<div class="container">
+    <hr>
+    <h1>Create New Record</h1><hr>
+    <div class="inputfields">
+        <div >
+            <label>Name</label>
+            <input name="name" [(ngModel)]="formData.reqBy">
+        </div>
+
+        <div>
+            <label>Color</label>
+            <input name="color" [(ngModel)]="formData.description">
+        </div>
+    
+
+            <!--Other fields-->
+            <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
+        </div>
+    </div>
+
+    <!-- <ag-grid-angular 
+    style= "width: 90vw; height: 500px;"
+    class= "ag-theme-alpine"
+    [rowData]= "rowData | async"
+    [columnDefs]= "columnDefs"
+    (cellValueChanged)="cellValueChanged($event)"
+    pagination
+    >
+    </ag-grid-angular>
+</div> -->
+
+<!-- Figure out how to use pagination
+figure out how to use event emitters...
+(cellClicked)="onCellClicked($event)"-->
+
+<!-- <clr-datagrid>
     <clr-dg-column>Version</clr-dg-column>
     <clr-dg-column>Requested By</clr-dg-column>
     <clr-dg-column>Requested Date</clr-dg-column>
@@ -33,44 +83,4 @@
     </clr-dg-row>
 
     <clr-dg-footer>{{tableData.length}} users</clr-dg-footer>
-</clr-datagrid>
--
-
-
-
-<div class="container">
-    <hr>
-    <h1>Create New Record</h1><hr>
-    <div class="inputfields">
-        <div >
-            <label>Name</label>
-            <input name="name" [(ngModel)]="formData.reqBy">
-        </div>
-
-        <div>
-            <label>Color</label>
-            <input name="color" [(ngModel)]="formData.description">
-        </div>
-    
-
-            <!--Other fields-->
-            <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
-        </div>
-    </div>
-
-
-<ag-grid-angular 
-    style= "width: 90vw; height: 500px;"
-    class= "ag-theme-alpine"
-    [rowData]= "rowData | async"
-    [columnDefs]= "columnDefs"
-    (cellValueChanged)="cellValueChanged($event)"
-    pagination
-    
-    >
-</ag-grid-angular>
-
-
-<!-- Figure out how to use pagination
-figure out how to use event emitters...
-(cellClicked)="onCellClicked($event)"-->
+</clr-datagrid> -->

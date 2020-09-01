@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TableDataService } from '../../../table-data.service'
 import { resetFakeAsyncZone } from '@angular/core/testing';
+import { ViewChild } from '@angular/core';
+import {GridOptions} from "../../../../../node_modules/ag-grid-community";
+
 
 @Component({
   selector: 'app-table-view',
@@ -9,18 +12,33 @@ import { resetFakeAsyncZone } from '@angular/core/testing';
   styleUrls: ['./table-view.component.scss']
 })
 export class TableViewComponent implements OnInit {
+  // ask if this a proper way to access a dom element
+  @ViewChild('agGrid') agGrid: Element; 
 
-  constructor(public _http: HttpClient, public _tableData: TableDataService) {}
+  //geters of row data
+  rowData;
+  tableData: any = [];
+  gridOptions;
+
+
+  constructor(public _http: HttpClient, public _tableData: TableDataService) {
+    this.gridOptions = <GridOptions>{
+      onGridReady: () => {
+        this.gridOptions.api.sizeColumnsToFit();
+    },
+      context: {
+          componentParent: this
+      }
+  };
+    this.gridOptions.rowData = this.rowData;
+    this.gridOptions.columnDefs = this.columnDefs;
+  }
 
   ngOnInit() {
    this.refreshDataBase()
    this.rowData = this._tableData.getTableData()
-    // this._tableData.getTableData().subscribe(
-    //   (res) =>{
-    //     console.log("getTableData() ran on init", res )
-    //     this.tableData = res
-    //   }
-    // )
+    this.gridOptions.api.sizeColumnsToFit()
+    // why isnt this working?
   }
 
 formData= {
@@ -29,8 +47,9 @@ formData= {
 }
 
 // refresh get (from onInit) the rowData for ag-grid
-rowData;
-tableData: any = [];
+//grid options for the grid object
+
+
 
 title = 'app';
 
@@ -50,22 +69,13 @@ columnDefs = [
     {headerName: "Expiration Date", field: "expDate",  editable: true},
 ];
 
-//gets the data
 
 
-// [
-//     { make: 'Toyota', model: 'Celica', price: 35000 },
-//     { make: 'Ford', model: 'Mondeo', price: 32000 },
-//     { make: 'Porsche', model: 'Boxter', price: 72000 }
-// ];
-// users = [
-//   {
-//   id:"1",
-//   name:"paul", 
-//   date:"1/14/20",
-//   color:"blue",
+// gridOptions= {
+//   rowData: this.rowData, 
+//   columnDefs: this.columnDefs, 
+
 // }
-// ]
 
 refreshDataBase(){
   this._tableData.getTableData().subscribe(
@@ -104,3 +114,21 @@ cellValueChanged(event){
 
 
 }
+
+
+
+
+
+// [
+//     { make: 'Toyota', model: 'Celica', price: 35000 },
+//     { make: 'Ford', model: 'Mondeo', price: 32000 },
+//     { make: 'Porsche', model: 'Boxter', price: 72000 }
+// ];
+// users = [
+//   {
+//   id:"1",
+//   name:"paul", 
+//   date:"1/14/20",
+//   color:"blue",
+// }
+// ]
