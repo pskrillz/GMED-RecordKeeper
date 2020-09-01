@@ -64,6 +64,7 @@
     class= "ag-theme-alpine"
     [rowData]= "rowData | async"
     [columnDefs]= "columnDefs"
+    (cellValueChanged)="cellValueChanged($event)"
     pagination
     
     >

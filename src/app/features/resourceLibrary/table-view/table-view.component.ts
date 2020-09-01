@@ -10,10 +10,11 @@ import { resetFakeAsyncZone } from '@angular/core/testing';
 })
 export class TableViewComponent implements OnInit {
 
-  constructor(public _http: HttpClient, public _tableData: TableDataService) { }
+  constructor(public _http: HttpClient, public _tableData: TableDataService) {}
 
   ngOnInit() {
    this.refreshDataBase()
+   this.rowData = this._tableData.getTableData()
     // this._tableData.getTableData().subscribe(
     //   (res) =>{
     //     console.log("getTableData() ran on init", res )
@@ -27,29 +28,30 @@ formData= {
   description: null,
 }
 
-
+// refresh get (from onInit) the rowData for ag-grid
+rowData;
 tableData: any = [];
 
 title = 'app';
 
 columnDefs = [
-    {headerName: 'Version', field: 'version' },
-    {headerName: 'Requested By', field: 'reqBy' },
-    {headerName: 'Requested Date', field: 'reqDate'},
-    {headerName: "Department", field: "dep"},
-    {headerName: "Name", field: "name"},
-    {headerName: "Reference No.", field: "refNum"},
-    {headerName: "Subject", field: "subject"},
-    {headerName: "User", field: "user"},
-    {headerName: "Link", field: "link"},
-    {headerName: "Period", field: "period"},
-    {headerName: "Description", field: "description"},
-    {headerName: "Last Update", field: "lastUpdate"},
-    {headerName: "Expiration Date", field: "expDate"},
+    {headerName: 'Version', field: 'version',  editable: true },
+    {headerName: 'Requested By', field: 'reqBy',  editable: true },
+    {headerName: 'Requested Date', field: 'reqDate',  editable: true},
+    {headerName: "Department", field: "dep",  editable: true},
+    {headerName: "Name", field: "name",  editable: true}, ,
+    {headerName: "Reference No.", field: "refNum",  editable: true},
+    {headerName: "Subject", field: "subject",  editable: true},
+    {headerName: "User", field: "user",  editable: true},
+    {headerName: "Link", field: "link",  editable: true},
+    {headerName: "Period", field: "period",  editable: true},
+    {headerName: "Description", field: "description",  editable: true},
+    {headerName: "Last Update", field: "lastUpdate",  editable: true},
+    {headerName: "Expiration Date", field: "expDate",  editable: true},
 ];
 
 //gets the data
-rowData = this._tableData.getTableData()
+
 
 // [
 //     { make: 'Toyota', model: 'Celica', price: 35000 },
@@ -76,16 +78,28 @@ refreshDataBase(){
 }
 
 addEntry(formData){
-this._tableData.addEntry(formData).subscribe(
+  this._tableData.addEntry(formData).subscribe(
   (res) => {
   console.log("dataworked", "formData: " + formData, res)
-  }
-)
-this.refreshDataBase()
+ })
+  this.refreshDataBase()
 // update ag grid rowdata
-this.rowData = this._tableData.getTableData()
+  this.rowData = this._tableData.getTableData()
 }
 
+cellValueChanged(event){
+  console.log("cellvaluechanged")
+  console.log(event.data)
+  console.log(Object.entries(event))
+  let eventColumn = event.colDef.field
+  console.log({ [eventColumn]: event.newValue } )
+  this._tableData.updateCell(event.data.id, { [eventColumn]: event.newValue }).subscribe(
+    res => {
+      console.log(res, 'worked')
+    }
+  )
+  // console.log(event.data.id, event.newValue)
+}
 
 
 
