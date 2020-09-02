@@ -3,13 +3,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly
     
 }
 
 // ag grid
 .ag-theme-alpine{
-    width: 100%; 
+    width: 90%; 
     height: 100%;
+    margin-right: 50px;
+    margin-left: 100px;
 }
 
 .gridcontainer{
@@ -17,11 +20,23 @@
     padding: 15px;
     margin: 25px;
     margin-top: 50px;
-    margin-right: 20px;
+  
 }
 
 
 .inputfields{
     display:flex;
     flex-direction: row;
+    justify-content: space-around;
+
+}
+
+#fit-to-button{
+    display: flex;
+    justify-content: center; 
+    margin-left: 300px;
+}
+
+.grid-controls{
+    display:flex;
 }
