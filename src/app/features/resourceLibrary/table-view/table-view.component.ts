@@ -42,8 +42,20 @@ export class TableViewComponent implements OnInit {
   }
 
 formData= {
+  version: null, 
   reqBy: null,
+  reqDate: null, 
+  dep: null, 
   description: null,
+  name: null, 
+  refNum: null, 
+  subject: null, 
+  user: null, 
+  link: null, 
+  period: null, 
+  lastUpdate: null, 
+  expDate: null,
+
 }
 
 // refresh get (from onInit) the rowData for ag-grid

@@ -20,20 +20,62 @@
     <h1>Create New Record</h1><hr>
     <div class="inputfields">
         <div >
-            <label>Name</label>
-            <input name="name" [(ngModel)]="formData.reqBy">
+            <label>Version</label>
+            <input name="Version" [(ngModel)]="formData.version">
         </div>
 
         <div>
-            <label>Color</label>
-            <input name="color" [(ngModel)]="formData.description">
+            <label>Requested By</label>
+            <input name="reqBy" [(ngModel)]="formData.reqBy">
+        </div>
+        <div>
+            <label>Requested Date</label>
+            <input name="reqDate" [(ngModel)]="formData.reqDate">
+        </div>
+        <div>
+            <label>Department</label>
+            <input name="dep" [(ngModel)]="formData.dep">
+        </div>
+        <div>
+            <label>Name</label>
+            <input name="name" [(ngModel)]="formData.name">
+        </div>
+        <div>
+            <label>Reference No.</label>
+            <input name="refNum" [(ngModel)]="formData.refNum">
+        </div>
+        <div>
+            <label>Subject</label>
+            <input name="subject" [(ngModel)]="formData.subject">
+        </div>
+        <div>
+            <label>User</label>
+            <input name="user" [(ngModel)]="formData.user">
+        </div>
+        <div>
+            <label>Link</label>
+            <input name="link" [(ngModel)]="formData.link">
+        </div>
+        <div>
+            <label>Period</label>
+            <input name="period" [(ngModel)]="formData.period">
+        </div>
+        <div>
+            <label>Description</label>
+            <input name="description" [(ngModel)]="formData.description">
+        </div>
+        <div>
+            <label>Last Update</label>
+            <input name="lastUpdate" [(ngModel)]="formData.lastUpdate">
+        </div>
+        <div>
+            <label>Expiration Date</label>
+            <input name="expDate" [(ngModel)]="formData.expDate">
         </div>
     
-
-            <!--Other fields-->
             <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
         </div>
-    </div>
+   
 
     <!-- <ag-grid-angular 
     style= "width: 90vw; height: 500px;"
