@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
+import { TableDataService } from './table-data.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './features/login/login.component';
@@ -11,6 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccesshubComponent } from './features/accesshub/accesshub.component';
 import { NavbarheaderComponent } from './features/navbarheader/navbarheader.component';
 import { TableViewComponent } from './features/resourceLibrary/table-view/table-view.component';
+
+import { AgGridModule } from 'ag-grid-angular';
+import { GridOptions } from "../../node_modules/ag-grid-community";
+
 
 @NgModule({
   declarations: [
@@ -28,8 +33,10 @@ import { TableViewComponent } from './features/resourceLibrary/table-view/table-
     BrowserAnimationsModule,
     FormsModule, 
     HttpClientModule,
+    
+    AgGridModule.withComponents([])
   ],
-  providers: [],
+  providers: [TableDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
