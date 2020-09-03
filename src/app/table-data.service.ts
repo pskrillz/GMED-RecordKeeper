@@ -31,7 +31,7 @@ export class TableDataService {
 
   // each time i check a row, I will pass the ids into an array and that delete it one by one. 
   deleteRows(idArray){
-    return this._http.delete(`${this.baseUrl}${idArray}`)
+    return this._http.delete(`${this.baseUrl}documentEntries/${idArray}`)
     
   }
 

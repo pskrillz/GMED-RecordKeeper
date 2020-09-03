@@ -22,7 +22,6 @@ export class TableViewComponent implements OnInit, AfterViewInit {
   constructor(public _http: HttpClient, public _tableData: TableDataService) {}
 
   ngOnInit() {
-   this.refreshDataBase()
    this.rowData = this._tableData.getTableData()
   }
 
@@ -66,19 +65,8 @@ export class TableViewComponent implements OnInit, AfterViewInit {
 
 
 
-  // gridOptions= {
-  //   rowData: this.rowData, 
-  //   columnDefs: this.columnDefs, 
-
-  // }
-
   refreshDataBase(){
-    this._tableData.getTableData().subscribe(
-      (res) => {
-        console.log("refreshDataBase worked", res)
-        this.tableData = res
-        
-      })
+    return this.rowData = this._tableData.getTableData()
   }
 
   addEntry(formData){
@@ -103,7 +91,6 @@ export class TableViewComponent implements OnInit, AfterViewInit {
       })
   }
 
-  // its a node??
   deleteRows(){
     const selectedRows = this.agGrid.api.getSelectedNodes();
     const rowIdArr = []
@@ -111,14 +98,15 @@ export class TableViewComponent implements OnInit, AfterViewInit {
       rowIdArr.push(selectedRows[i].data.id)
     }
     console.log(rowIdArr)
-    this._tableData.deleteRows(rowIdArr).subscribe(
-      (res) => {
-        console.log("deleted!")
-        this.rowData = this._tableData.getTableData()
-      }
-    )
 
+    for (let i = 0; i<selectedRows.length; i++){
+      this._tableData.deleteRows(rowIdArr[i]).subscribe( 
+        (res) => {console.log("this ran")
+         this.refreshDataBase() })
+      console.log("deleted!")
+    }
   }
+
 
 
 }
