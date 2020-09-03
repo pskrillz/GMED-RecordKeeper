@@ -22,7 +22,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
   constructor(public _http: HttpClient, public _tableData: TableDataService) {}
 
   ngOnInit() {
-   this.refreshDataBase()
+  //  this.refreshDataBase()
    this.rowData = this._tableData.getTableData()
   }
 
@@ -31,18 +31,18 @@ export class TableViewComponent implements OnInit, AfterViewInit {
   }
 
   formData= {
-    version: null, 
+    version: null,
     reqBy: null,
-    reqDate: null, 
-    dep: null, 
+    reqDate: null,
+    dep: null,
     description: null,
-    name: null, 
-    refNum: null, 
-    subject: null, 
-    user: null, 
-    link: null, 
-    period: null, 
-    lastUpdate: null, 
+    name: null,
+    refNum: null,
+    subject: null,
+    user: null,
+    link: null,
+    period: null,
+    lastUpdate: null,
     expDate: null,
   }
 
@@ -67,8 +67,8 @@ export class TableViewComponent implements OnInit, AfterViewInit {
 
 
   // gridOptions= {
-  //   rowData: this.rowData, 
-  //   columnDefs: this.columnDefs, 
+  //   rowData: this.rowData,
+  //   columnDefs: this.columnDefs,
 
   // }
 
@@ -77,7 +77,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
       (res) => {
         console.log("refreshDataBase worked", res)
         this.tableData = res
-        
+
       })
   }
 
@@ -86,7 +86,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
     (res) => {
     console.log("dataworked", "formData: " + formData, res)
     })
-    this.refreshDataBase()
+    // this.refreshDataBase()
   // update ag grid rowdata
     this.rowData = this._tableData.getTableData()
   }
