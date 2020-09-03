@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from "src/environments/environment";
 
 
 @Injectable()
 
 export class TableDataService {
 
-  baseUrl= "http://localhost:3000/api/"
+  baseUrl= environment.apiUrl
 
 
   constructor( public _http: HttpClient) { }
