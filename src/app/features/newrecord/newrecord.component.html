@@ -1,0 +1,94 @@
+<app-navbarheader></app-navbarheader>
+
+
+<h1> Add a New Record</h1>
+
+<!-- edit ngmodels this messes up the UI-->
+<div>
+    <form clrForm>
+        <clr-input-container>
+        <label>Version</label>
+        <input clrInput type="text" name="Version" [(ngModel)]="_tableView.formData.version"/>
+        </clr-input-container>
+        <clr-input-container>
+        <label>Requested By</label>
+        <input clrInput type="text" name="reqBy" [(ngModel)]="_tableView.formData.reqBy" />
+        </clr-input-container>
+        <clr-date-container>
+            <label>Request Date</label>
+            <input type="date" clrDate name="reqDate" [(ngModel)]="_tableView.formData.reqDate">
+        </clr-date-container>
+         
+         <clr-select-container>
+         <label>Department</label>
+         <select clrSelect name="options" [(ngModel)]="_tableView.formData.dep" required>
+        <option value="Finance">Finance</option>
+        <option value="HR">HR</option>
+        <option value="Management">Management</option>
+        </select>
+        </clr-select-container>
+
+        <clr-input-container>
+            <label>Name</label>
+            <input type="text" clrInput name="name" [(ngModel)]="_tableView.formData.name">
+        </clr-input-container>
+        <clr-input-container>
+            <label>Reference Number</label>
+            <input type="text" clrInput name="refNum" [(ngModel)]="_tableView.formData.refNum">
+        </clr-input-container>
+          <clr-input-container>
+            <label>Subject</label>
+            <input type="text" clrInput name="Subject" [(ngModel)]="_tableView.formData.subject">
+        </clr-input-container>
+          <clr-input-container>
+            <label>User</label>
+            <input type="text" clrInput name="User" [(ngModel)]="_tableView.formData.user">
+        </clr-input-container>
+          <clr-input-container>
+            <label>Link</label>
+            <input type="text" clrInput name="Link" [(ngModel)]="_tableView.formData.link">
+        </clr-input-container>
+          <clr-input-container>
+            <label>Period</label>
+            <input type="text" clrInput name="period" [(ngModel)]="_tableView.formData.period">
+        </clr-input-container>
+          <clr-input-container>
+            <label>Description</label>
+            <input type="text" clrInput name="description" [(ngModel)]="_tableView.formData.description">
+        </clr-input-container>
+          <clr-date-container>
+            <label>Last Update</label>
+            <input type="date" clrDate name="LastUpdate" [(ngModel)]="_tableView.formData.lastUpdate">
+        </clr-date-container>
+          <clr-date-container>
+            <label>Expiration Date</label>
+            <input type="date" clrDate name="expDate" [(ngModel)]="_tableView.formData.expDate">
+        </clr-date-container>
+    </form>
+
+    <button type="submit" class="btn btn-primary" (click)="modal = true">Submit</button>
+
+    <!-- <button type="submit" class="btn btn-primary" (click)="_tableView.addEntry(_tableView.formData)">Submit</button> -->
+
+</div>
+
+
+<clr-modal [(clrModalOpen)]="modal" [clrModalSize]="'lg'">
+    <h3 class="modal-title">What does this record contain?</h3>
+    <div class="modal-body">
+        <p>Please enter column descriptors...
+        seperate with commas.</p>
+       
+       
+        <input [(ngModel)]="_tableView.formData.dataColumns">
+        
+            
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="modal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="modal = false; _tableView.addEntry(_tableView.formData)">Ok</button>
+    </div>
+<clr-modal>
+
+
+

@@ -17,6 +17,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
 
   //geters of row data
   rowData;
+  basic = false;
   tableData: any = [];
 
   constructor(public _http: HttpClient, public _tableData: TableDataService) {}
@@ -43,6 +44,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
     period: null, 
     lastUpdate: null, 
     expDate: null,
+    dataColumns: null
   }
 
 
@@ -61,6 +63,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
       {headerName: "Description", field: "description",  editable: true, sortable: true, filter: true },
       {headerName: "Last Update", field: "lastUpdate",  editable: true, sortable: true, filter: true },
       {headerName: "Expiration Date", field: "expDate",  editable: true, sortable: true, filter: true },
+      {headerName: "Expiration Date", field: "expDate",  editable: true, sortable: true, filter: true }
   ];
 
 

@@ -17,11 +17,30 @@
 <div class="grid-controls">
     <button class="btn btn-primary grid-controls" id="fit-to-button" (click)="this.agGrid.api.sizeColumnsToFit()">Fit to Screen</button>
     <button class="btn btn-warning grid-controls" (click)="deleteRows()">Delete Selected</button>
+    <button class="btn btn-primary btn-success" (click)="basic = true">Create New</button>
 </div>
 
 
 
 
+
+<clr-modal [(clrModalOpen)]="basic" [clrModalSize]="'lg'">
+    <h3 class="modal-title">Create New Record</h3>
+    <div class="modal-body">
+        <p>But not much to say...</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="basic = false">Ok</button>
+    </div>
+</clr-modal>
+
+
+
+
+
+
+<!-- 
 <div class="container">
     <hr>
     <h1>Create New Record</h1>
@@ -84,7 +103,7 @@
     
             <button type="submit" class="btn btn-primary" (click)="addEntry(formData)">Submit</button>
         
-</div>
+</div> -->
 <div class="bottom-spacer"></div>
 <div>
 
