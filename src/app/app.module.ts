@@ -15,6 +15,7 @@ import { TableViewComponent } from './features/resourceLibrary/table-view/table-
 
 import { AgGridModule } from 'ag-grid-angular';
 import { GridOptions } from "../../node_modules/ag-grid-community";
+import { NewrecordComponent } from './features/newrecord/newrecord.component';
 
 
 
@@ -25,6 +26,7 @@ import { GridOptions } from "../../node_modules/ag-grid-community";
     AccesshubComponent,
     NavbarheaderComponent,
     TableViewComponent,
+    NewrecordComponent,
     
   ],
   imports: [
@@ -37,7 +39,7 @@ import { GridOptions } from "../../node_modules/ag-grid-community";
     
     AgGridModule.withComponents([])
   ],
-  providers: [TableDataService],
+  providers: [TableDataService, TableViewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
