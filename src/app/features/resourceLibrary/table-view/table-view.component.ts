@@ -63,7 +63,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
       {headerName: "Description", field: "description",  editable: true, sortable: true, filter: true },
       {headerName: "Last Update", field: "lastUpdate",  editable: true, sortable: true, filter: true },
       {headerName: "Expiration Date", field: "expDate",  editable: true, sortable: true, filter: true },
-      {headerName: "Expiration Date", field: "expDate",  editable: true, sortable: true, filter: true }
+      {headerName: "Data Columns", field: "dataColumns",  editable: true, sortable: true, filter: true }
   ];
 
 
