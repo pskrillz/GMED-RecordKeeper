@@ -1,5 +1,5 @@
 # GMEDPortal
 
-Prototype UI for login portal and user dashboard created with Angular & Clarity. 
+Using Angular, Clarity.design, and ag-grid. 
 
-Click Next on login form to go to dashboard.
+Use ng build --prod to hook up to back end. 
