@@ -32,6 +32,7 @@ export class TableViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
    this.rowData = this._tableData.getTableData()
+   this._tableData.loggedIn = true
   }
 
   ngAfterViewInit(){

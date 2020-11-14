@@ -14,7 +14,8 @@ export class NewrecordComponent implements OnInit {
 
   constructor(public _tableData : TableDataService, public _tableView : TableViewComponent) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this._tableData.loggedIn = true
   }
 
 

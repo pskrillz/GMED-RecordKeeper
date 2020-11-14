@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TableDataService } from '../../table-data.service'
 
 @Component({
   selector: 'app-accesshub',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccesshubComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _tableData : TableDataService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this._tableData.loggedIn = true
   }
 
 }

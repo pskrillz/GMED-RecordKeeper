@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
 
   constructor( public _tableData: TableDataService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this._tableData.loggedIn = false
   }
 
 }
