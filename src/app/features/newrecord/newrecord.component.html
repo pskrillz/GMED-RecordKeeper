@@ -31,7 +31,7 @@
           <label>Department</label>
           <select clrSelect name="options"
           id="select-full" class="clr-select"
-          [(ngModel)]="_tableView.formData.dep" required>
+          [(ngModel)]="_tableView.formData.dep">
             <option value="Finance">Finance</option>
             <option value="HR">HR</option>
             <option value="Management">Management</option>
@@ -89,7 +89,7 @@
           <div class="clr-row btn-group" >
           <button type="submit" 
           class="btn btn-primary submit-button clr-col-3"  
-          (click)="_tableView.addEntry(_tableView.formData)"
+          (click)="_tableView.addEntry(_tableView.formData); modal= true"
           style="position: relative; left: -10px;">Submit</button>
 
 <!-- Need to async the clear form after it submits.  -->
@@ -113,20 +113,17 @@
 <clr-modal [(clrModalOpen)]="modal" [clrModalSize]="'md'">
     <h3 class="modal-title" 
     style="text-align: center;">
-    What does this record contain?
+    Record added successfully. 
   </h3>
     <div class="modal-body">
-        <p>Please enter column descriptors...
-        seperate with commas.</p>
-       
-       
+
+<!--        
         <input [(ngModel)]="_tableView.formData.dataColumns">
-        
+         -->
             
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline" (click)="modal = false">Cancel</button>
-        <button type="button" class="btn btn-primary" (click)="modal = false; _tableView.addEntry(_tableView.formData)">Ok</button>
+        <button type="button" class="btn btn-primary" (click)="modal = false; clearForms(); _tableView.refreshDataBase()">Ok</button>
     </div>
 <clr-modal>
 
