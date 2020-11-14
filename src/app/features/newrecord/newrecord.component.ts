@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableViewComponent } from "../resourceLibrary/table-view/table-view.component"
 import { TableDataService } from '../../table-data.service'
-import
 
 @Component({
   selector: 'app-newrecord',
