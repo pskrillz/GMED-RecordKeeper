@@ -26,7 +26,7 @@ import { NewrecordComponent } from './features/newrecord/newrecord.component';
     AccesshubComponent,
     NavbarheaderComponent,
     TableViewComponent,
-    NewrecordComponent,
+    NewrecordComponent
     
   ],
   imports: [

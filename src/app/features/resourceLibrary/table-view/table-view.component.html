@@ -1,4 +1,3 @@
-<app-navbarheader></app-navbarheader>
 
 
 
@@ -15,9 +14,10 @@
 </div>
 
 <div class="grid-controls">
-    <button class="btn btn-primary grid-controls" id="fit-to-button" (click)="this.agGrid.api.sizeColumnsToFit()">Fit to Screen</button>
-    <button class="btn btn-warning grid-controls" (click)="deleteRows()">Delete Selected</button>
-    <button class="btn btn-primary btn-success" (click)="basic = true">Create New</button>
+    <!-- <button class="btn btn-primary" (click)="this.agGrid.api.sizeColumnsToFit()">Fit to Screen</button> -->
+
+    <button class="btn btn-success" (click)="basic = true">Create New</button>
+    <button class="btn btn-warning" (click)="deleteRows()">Delete Selected</button>
 </div>
 
 
@@ -25,9 +25,8 @@
 
 
 <clr-modal [(clrModalOpen)]="basic" [clrModalSize]="'lg'">
-    <h3 class="modal-title">Create New Record</h3>
     <div class="modal-body">
-        <p>But not much to say...</p>
+        <app-newrecord></app-newrecord>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
