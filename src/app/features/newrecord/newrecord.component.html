@@ -89,8 +89,10 @@
           <div class="clr-row btn-group" >
           <button type="submit" 
           class="btn btn-primary submit-button clr-col-3"  
-          (click)="modal = true; clearForms()"
+          (click)="_tableView.addEntry(_tableView.formData)"
           style="position: relative; left: -10px;">Submit</button>
+
+<!-- Need to async the clear form after it submits.  -->
 
           <button class="btn btn-regular clr-col-3"
           (click)="clearForms()"
