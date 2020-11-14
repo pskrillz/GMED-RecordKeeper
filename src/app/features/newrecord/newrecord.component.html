@@ -85,20 +85,35 @@
           <input type="date" clrDate name="expDate" [(ngModel)]="_tableView.formData.expDate">
         </clr-date-container><br> -->
 
+     
+      
+          <div class="clr-row btn-group" >
+          <button type="submit" 
+          class="btn btn-primary submit-button clr-col-3"  
+          (click)="modal = true; clearForms()"
+          style="position: relative; left: -10px;">Submit</button>
 
-        <button type="submit" class="btn btn-primary submit-button"  (click)="modal = true">Submit</button>
+          <button class="btn btn-regular clr-col-3"
+          (click)="clearForms()"
+          style="border-left: 1px solid black;">Clear</button>
+       </div>
+
 
 
     </form>
 
 
-    <!-- <button type="submit" class="btn btn-primary" (click)="_tableView.addEntry(_tableView.formData)">Submit</button> -->
-
+   
 </div>
 
 
-<clr-modal [(clrModalOpen)]="modal" [clrModalSize]="'lg'">
-    <h3 class="modal-title">What does this record contain?</h3>
+<!-- modal -->
+
+<clr-modal [(clrModalOpen)]="modal" [clrModalSize]="'md'">
+    <h3 class="modal-title" 
+    style="text-align: center;">
+    What does this record contain?
+  </h3>
     <div class="modal-body">
         <p>Please enter column descriptors...
         seperate with commas.</p>

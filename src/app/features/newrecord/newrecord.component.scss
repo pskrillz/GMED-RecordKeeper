@@ -38,13 +38,10 @@ div form clr-date-container{
     
 }
 
-
-
-.submit-button {
+.btn-group {
     position: relative;
     left: 100px;
-    width: 200px;
-    display: inline-block;
+    width: 500px;
     top: 50px;
     margin-bottom: 40px;
 
@@ -56,8 +53,23 @@ div form clr-date-container label{
     
 }
 
-// div .clr-input-group{
-//     margin-left: $field-spacer;
-//     border-bottom: none;
-// }
+.modal-body.modal-title{
+    padding: 20px;
+}
+
+
+// mobile media query
+
+@media screen and (max-width: 500px ){
+    .card{
+        width: 350px;
+    }
+
+    .btn-group{
+        position: relative;
+        left: 15px;
+
+    }
+}
+
 
