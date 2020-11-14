@@ -8,16 +8,19 @@
 <div class="create-form">
 
 
-    <form clrForm class="card" >
+    <form clrForm class="createform card" >
 
         <clr-input-container>
           <label>Version</label>
-          <input clrInput type="text" name="Version" [(ngModel)]="_tableView.formData.version"/>
+          <input clrInput type="text" name="Version" 
+          placeholder="enter current version" [(ngModel)]="_tableView.formData.version"/>
         </clr-input-container>
 
         <clr-input-container>
-          <label>Requested By</label>
-          <input clrInput type="text" name="reqBy" [(ngModel)]="_tableView.formData.reqBy" />
+          <label>Request By</label>
+          <input clrInput type="text" name="reqBy" 
+          placeholder="person requesting"
+          [(ngModel)]="_tableView.formData.reqBy" />
         </clr-input-container>
 
         <clr-date-container>
@@ -27,7 +30,9 @@
          
          <clr-select-container>
           <label>Department</label>
-          <select clrSelect name="options" [(ngModel)]="_tableView.formData.dep" required>
+          <select clrSelect name="options"
+          id="select-full" class="clr-select"
+          [(ngModel)]="_tableView.formData.dep" required>
             <option value="Finance">Finance</option>
             <option value="HR">HR</option>
             <option value="Management">Management</option>
@@ -36,51 +41,56 @@
 
         <clr-input-container>
           <label>Name</label>
-          <input type="text" clrInput name="name" [(ngModel)]="_tableView.formData.name">
+          <input type="text" clrInput name="name"
+          placeholder="enter title of doc" 
+          [(ngModel)]="_tableView.formData.name">
         </clr-input-container>
 
         <clr-input-container>
-          <label>Reference Number</label>
-          <input type="text" clrInput name="refNum" [(ngModel)]="_tableView.formData.refNum">
-      </clr-input-container>
-        <clr-input-container>
-
           <label>Subject</label>
-          <input type="text" clrInput name="Subject" [(ngModel)]="_tableView.formData.subject">
-      </clr-input-container>
-        <clr-input-container>
-
+          <input type="text" clrInput name="Subject"
+          placeholder="describe subject" 
+          [(ngModel)]="_tableView.formData.subject">
+        </clr-input-container>
+       
+        <!-- <clr-input-container> 
           <label>User</label>
           <input type="text" clrInput name="User" [(ngModel)]="_tableView.formData.user">
-        </clr-input-container>
-        <clr-input-container>
-
+        </clr-input-container> -->
+        
+        <!-- <clr-input-container>
           <label>Link</label>
           <input type="text" clrInput name="Link" [(ngModel)]="_tableView.formData.link">
-        </clr-input-container>
+        </clr-input-container> -->
 
-          <clr-input-container>
+          <!-- <clr-input-container>
           <label>Period</label>
           <input type="text" clrInput name="period" [(ngModel)]="_tableView.formData.period">
-        </clr-input-container>
+        </clr-input-container> -->
 
         <clr-input-container>
-          <label>Description</label>
-          <input type="text" clrInput name="description" [(ngModel)]="_tableView.formData.description">
+          <label>Comment</label>
+          <input type="text" clrInput name="description"
+          placeholder="enter comment"
+           [(ngModel)]="_tableView.formData.description">
         </clr-input-container>
 
-        <clr-date-container>
+        <!-- <clr-date-container>
           <label>Last Update</label>
           <input type="date" clrDate name="LastUpdate" [(ngModel)]="_tableView.formData.lastUpdate">
-      </clr-date-container>
+      </clr-date-container> -->
       
-        <clr-date-container>
+        <!-- <clr-date-container>
           <label>Expiration Date</label>
           <input type="date" clrDate name="expDate" [(ngModel)]="_tableView.formData.expDate">
-        </clr-date-container>
+        </clr-date-container><br> -->
+
+
+        <button type="submit" class="btn btn-primary submit-button"  (click)="modal = true">Submit</button>
+
+
     </form>
 
-  <button type="submit" class="btn btn-primary" (click)="modal = true">Submit</button>
 
     <!-- <button type="submit" class="btn btn-primary" (click)="_tableView.addEntry(_tableView.formData)">Submit</button> -->
 

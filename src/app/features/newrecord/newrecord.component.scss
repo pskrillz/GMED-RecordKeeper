@@ -38,9 +38,16 @@ div form clr-date-container{
     
 }
 
-div form clr-date-container input{
 
-    
+
+.submit-button {
+    position: relative;
+    left: 100px;
+    width: 200px;
+    display: inline-block;
+    top: 50px;
+    margin-bottom: 40px;
+
 }
 
 div form clr-date-container label{

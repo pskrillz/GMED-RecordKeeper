@@ -17,4 +17,10 @@ export class NewrecordComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  clearForms(){
+    
+  }
+
+
 }
