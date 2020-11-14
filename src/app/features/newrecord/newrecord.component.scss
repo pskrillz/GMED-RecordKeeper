@@ -1,0 +1,56 @@
+$field-spacer: 150px;
+
+
+
+#title{
+    text-align: center;
+}
+
+.create-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+
+}
+
+.card{
+    width: 500px;
+    padding: 50px;
+    position: relative;
+
+
+}
+
+// formatting the form fields
+
+div form clr-input-container input {
+    margin-left: $field-spacer;
+}
+
+div form clr-select-container select {
+    margin-left: $field-spacer;
+}
+
+div form clr-date-container{
+    margin-left: $field-spacer;
+    
+}
+
+div form clr-date-container input{
+
+    
+}
+
+div form clr-date-container label{
+    position: relative;
+    left: -160px
+    
+}
+
+// div .clr-input-group{
+//     margin-left: $field-spacer;
+//     border-bottom: none;
+// }
+
