@@ -1,5 +1,22 @@
+<!-- 
+ <nav class="subnav" style="display:flex;" >
+     <ul class="nav"  style="justify-content: space-around">
+
+        <button class="btn btn-success" 
+        (click)="basic = true">
+        Create New
+        </button>
 
 
+        <button class="btn btn-warning" 
+        (click)="deleteRows()">
+        Delete Selected
+        </button>
+
+     </ul>
+ </nav> -->
+
+ 
 
 
 <div class="gridcontainer">
@@ -14,8 +31,6 @@
 </div>
 
 <div class="grid-controls">
-    <!-- <button class="btn btn-primary" (click)="this.agGrid.api.sizeColumnsToFit()">Fit to Screen</button> -->
-
     <button class="btn btn-success" (click)="basic = true">Create New</button>
     <button class="btn btn-warning" (click)="deleteRows()">Delete Selected</button>
 </div>
@@ -28,10 +43,10 @@
     <div class="modal-body">
         <app-newrecord></app-newrecord>
     </div>
-    <div class="modal-footer">
+    <!-- <div class="modal-footer">
         <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
         <button type="button" class="btn btn-primary" (click)="basic = false">Ok</button>
-    </div>
+    </div> -->
 </clr-modal>
 
 

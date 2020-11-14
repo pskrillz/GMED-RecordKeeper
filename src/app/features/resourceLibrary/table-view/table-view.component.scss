@@ -12,14 +12,13 @@
     width: 90%; 
     height: 100%;
     margin-right: 50px;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 .gridcontainer{
-    width: 90vw; height: 60vh;
+    width: 100vw; height: 70vh;
     padding: 15px;
-    margin: 25px;
-    margin-top: 50px;
+    margin-top: 20px;
   
 }
 
@@ -38,7 +37,7 @@
 }
 
 .grid-controls{
-    display:flex;
+    text-align: center;
 }
 
 .bottom-spacer{
@@ -55,7 +54,7 @@
     .gridcontainer{
         height: 60vh;
         margin-top: 20px;
-        width: 90vw;
+        width: 600px;
         margin-right: 6vw;
 
     }
@@ -67,8 +66,13 @@
     }
 
     .grid-controls{
-        margin-left: 8vw;
+        text-align: center;
         display: block;
+    }
+
+    nav {
+        position: absolute;
+        bottom: 10px;
     }
 
 
