@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TableDataService } from '../../table-data.service'
 
 @Component({
   selector: 'app-navbarheader',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarheaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _tableData : TableDataService) { }
 
   ngOnInit(): void {
   }

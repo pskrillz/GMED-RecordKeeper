@@ -8,9 +8,12 @@ import { environment } from "src/environments/environment";
 @Injectable()
 
 export class TableDataService {
-
+  
   baseUrl= environment.apiUrl
 
+
+  //status toggles
+  loggedIn = false;
 
   constructor( public _http: HttpClient) { }
 

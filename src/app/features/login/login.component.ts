@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TableDataService } from "../../table-data.service"
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor( public _tableData: TableDataService) { }
 
   ngOnInit(): void {
   }

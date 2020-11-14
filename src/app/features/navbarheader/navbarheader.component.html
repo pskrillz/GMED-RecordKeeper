@@ -1,20 +1,29 @@
-<header>
-    <h3 style="color:white;">GMED RecordKeeper</h3>
+<header 
+style="background-color: navy;" >
+    <img src='../../../assets/bigLogo.png'
+    style="margin: 0 auto;"> 
  </header>
- <nav class="subnav" >
+ <nav class="subnav">
+ <!-- *ngIf="_tableData.loggedIn"> -->
      <ul class="nav" style="display:flex;">
          <li class="nav-item">
-             <a class="nav-link" href="/access">Dashboard</a>
+             <a class="nav-link" href="/access">Home</a>
          </li>
          <li class="nav-item">
-                <a class="nav-link" href="/generator">Add New</a>
+                <a class="nav-link" href="/generator">Add Record</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/tableView">Library</a>
+                <a class="nav-link" href="/tableView">Table View</a>
+            </li>
+            <li class="nav-item">
+                User Guide
             </li>
         
          <li class="nav-item" >
-             <a class="nav-link" href="#">Log Out</a>
+             <a class="nav-link" href=""
+             >
+                 Log Out
+                </a>
          </li>
      </ul>
  </nav>
