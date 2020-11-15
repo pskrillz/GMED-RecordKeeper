@@ -21,7 +21,7 @@
 
 <div class="gridcontainer">
     <ag-grid-angular #agGrid
-        class= "ag-theme-alpine"
+        class="ag-theme-alpine"
         [rowData]= "rowData | async"
         [columnDefs]= "columnDefs"
         (cellValueChanged)="cellValueChanged($event)"
