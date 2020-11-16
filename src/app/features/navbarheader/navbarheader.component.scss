@@ -1,6 +1,21 @@
+$title-alignment : 100px;
+
 .nav{
-    height: 60px;
+    // height: 60px;
     margin-top: 10px;
+    margin-bottom: 0px;
+    box-shadow: none;
+
+
+
+
+}
+
+
+.navbarlist{
+    border: none;
+    margin-left: 15px;
+    border-bottom: 1px solid grey;
 }
 
 #mobile-logo{
@@ -12,16 +27,37 @@
     .logo{
         display: none;
     }
+  
+  
 
     #mobile-logo{
         display: block;
+        width: 100vw;
         height: 40px;
+        margin-bottom: 10px;
         margin-top: 2vh;
-        margin-left: 2vw;
+        margin-left: $title-alignment;
+
     }
 
     .nav{
-        height: 30px;
+        height: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
     }
+
+  .navbarlist{
+      border-top: 1px solid grey;
+      margin-left: $title-alignment
+  }
+
+}
+
+@media screen and (min-width: 500px){
+    .nav{ 
+        margin-bottom: 30px;
+    }
+
 
 }
