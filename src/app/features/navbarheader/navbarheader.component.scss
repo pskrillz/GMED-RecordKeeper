@@ -5,17 +5,27 @@ $title-alignment : 100px;
     margin-top: 10px;
     margin-bottom: 0px;
     box-shadow: none;
-
-
-
+    // border-bottom: 3px solid navy;
 
 }
 
+.logo{
+    padding: 15px;
+
+}
+
+header{
+    background-color: white;
+}
 
 .navbarlist{
     border: none;
     margin-left: 15px;
-    border-bottom: 1px solid grey;
+    color: navy;
+    font-size: larger;
+    // margin-left: 30vw;
+    // border-bottom: 1px solid grey;
+    border-bottom: 2px solid navy;
 }
 
 #mobile-logo{
@@ -36,7 +46,8 @@ $title-alignment : 100px;
         height: 40px;
         margin-bottom: 10px;
         margin-top: 2vh;
-        margin-left: $title-alignment;
+        margin-left: 20px;
+        // margin-left: $title-alignment;
 
     }
 
@@ -49,7 +60,8 @@ $title-alignment : 100px;
 
   .navbarlist{
       border-top: 1px solid grey;
-      margin-left: $title-alignment
+      margin-left: 0px;
+    //   margin-left: $title-alignment
   }
 
 }
