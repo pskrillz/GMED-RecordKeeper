@@ -1,7 +1,11 @@
 # GMEDPortal
+DEMO Instructions: 
+Press "Next" on login page to continue
 
-Using Angular, Clarity.design, and ag-grid. 
 
+Tech: Angular, Clarity.design, and ag-grid. 
+
+Environments:
 Use ng build --prod to hook up to back end. 
 
-Press "Next" on login page to continue
+
