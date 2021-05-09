@@ -1,6 +1,6 @@
 # GMEDPortal
-DEMO Instructions: 
-Press "Next" on login page to continue
+DEMO Instructions: <br>
+Press "Next" on login page to continue <br>
 
 
 Tech: Angular, Clarity.design, and ag-grid. 
