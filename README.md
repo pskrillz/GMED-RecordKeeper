@@ -1,5 +1,5 @@
 # GMEDPortal
-DEMO Instructions: <br>
+DEMO INSTRUCTIONS: <br>
 Press "Next" on login page to continue <br>
 
 ...............
